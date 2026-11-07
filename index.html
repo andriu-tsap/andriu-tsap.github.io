@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Andrii Tsap — strony internetowe, sklepy i automatyzacje</title>
+<meta name="description" content="Front-end developer i projektant UI z Sosnowca. Strony dla małych firm, landing page, sklepy, szablony e-mail i automatyzacje w Pythonie.">
+<meta property="og:title" content="Andrii Tsap — strony internetowe i automatyzacje">
+<meta property="og:description" content="Strony dla małych firm, landing page, sklepy, szablony e-mail i automatyzacje w Pythonie.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a href="#" class="me">Andrii Tsap</a>
+  <nav aria-label="Nawigacja">
+    <a href="#projekty" data-i18n="nav_work">Projekty</a>
+    <a href="#uslugi" data-i18n="nav_services">Usługi</a>
+    <a href="#kontakt" data-i18n="nav_contact">Kontakt</a>
+  </nav>
+  <div class="lang" role="group" aria-label="Język">
+    <button type="button" data-lang="pl" aria-pressed="true">PL</button>
+    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <p class="avail"><span aria-hidden="true"></span><span data-i18n="avail">Przyjmuję zlecenia od zaraz</span></p>
+  <h1 data-i18n="h1">Robię strony i narzędzia, dzięki którym mała firma dostaje więcej zapytań i mniej pracy w Excelu.</h1>
+  <p class="intro" data-i18n="intro">Jestem inżynierem informatyki (IoT) z Sosnowca. Projektuję w Figmie, koduję w HTML, CSS i JavaScript, a powtarzalną robotę automatyzuję w Pythonie.</p>
+  <div class="cta">
+    <a class="btn" href="#kontakt" data-i18n="cta">Opisz swój projekt</a>
+    <a class="btn ghost" href="#projekty" data-i18n="cta2">Zobacz projekty</a>
+  </div>
+</section>
+
+<section id="projekty" class="work">
+  <h2 data-i18n="work_h">Projekty</h2>
+  <p class="lead" data-i18n="work_p">Każdy projekt ma działające demo i kod na GitHubie. Marki są fikcyjne, rozwiązania prawdziwe.</p>
+  <div class="filters" role="group" aria-label="Filtruj projekty" id="filters"></div>
+  <ul class="projects" id="projects"></ul>
+</section>
+
+<section id="uslugi" class="services">
+  <h2 data-i18n="srv_h">Co mogę dla Ciebie zrobić</h2>
+  <p class="lead" data-i18n="srv_p">Ceny orientacyjne. Dokładną wycenę dostajesz po krótkiej rozmowie, zanim cokolwiek zapłacisz.</p>
+  <table class="price">
+    <tbody id="services"></tbody>
+  </table>
+</section>
+
+<section class="how">
+  <h2 data-i18n="how_h">Jak wygląda współpraca</h2>
+  <ol>
+    <li><h3 data-i18n="s1h">Rozmowa i wycena</h3><p data-i18n="s1p">Mówisz, czego potrzebujesz. W ciągu doby dostajesz zakres, termin i stałą cenę.</p></li>
+    <li><h3 data-i18n="s2h">Projekt w Figmie</h3><p data-i18n="s2p">Przy stronach najpierw pokazuję makietę. Poprawki na tym etapie są szybkie i nic nie kosztują.</p></li>
+    <li><h3 data-i18n="s3h">Kodowanie i testy</h3><p data-i18n="s3p">Strona działa na telefonie i komputerze, ładuje się szybko i jest czytelna dla Google.</p></li>
+    <li><h3 data-i18n="s4h">Publikacja i wsparcie</h3><p data-i18n="s4p">Pomagam z domeną i hostingiem. Przez 30 dni drobne poprawki robię bez dopłaty.</p></li>
+  </ol>
+</section>
+
+<section class="about">
+  <div>
+    <h2 data-i18n="about_h">O mnie</h2>
+    <p data-i18n="about_p1">Ukończyłem informatykę (specjalność IoT) w Akademii Humanitas w Sosnowcu, pracę inżynierską obroniłem z wyróżnieniem. Moja praca dyplomowa to generator komponentów UI, który z opisu tekstowego tworzy gotowy kod HTML/CSS.</p>
+    <p data-i18n="about_p2">Po studiach odbyłem półroczny staż IT w Bayrone Sp. z o.o. Najlepiej czuję się na styku projektowania i kodu: wiem, jak coś ma wyglądać, i potrafię to zbudować.</p>
+  </div>
+  <dl class="skills">
+    <div><dt data-i18n="sk1">Projektowanie</dt><dd>Figma, UI/UX, Photoshop</dd></div>
+    <div><dt data-i18n="sk2">Front-end</dt><dd>HTML, CSS, JavaScript (ES6+), SVG</dd></div>
+    <div><dt data-i18n="sk3">Back-end i dane</dt><dd>Python, SQL, pandas, Excel</dd></div>
+    <div><dt data-i18n="sk4">Inne</dt><dd data-i18n="sk4v">Montaż wideo, Blender 3D, Git</dd></div>
+    <div><dt data-i18n="sk5">Języki</dt><dd data-i18n="sk5v">ukraiński, angielski, polski</dd></div>
+  </dl>
+</section>
+
+<section id="kontakt" class="contact">
+  <h2 data-i18n="ct_h">Masz projekt? Napisz.</h2>
+  <p data-i18n="ct_p">Odpowiadam w ciągu kilku godzin. Możemy rozliczyć się przez Useme, dostaniesz fakturę VAT.</p>
+  <a class="mail" href="mailto:andriu.tsap@gmail.com">andriu.tsap@gmail.com</a>
+  <ul class="links">
+    <li><a href="https://github.com/andriu-tsap">GitHub</a></li>
+    <li><a href="https://github.com/andriu-tsap/ai-ui-generator" data-i18n="thesis">Praca inżynierska</a></li>
+  </ul>
+</section>
+</main>
+
+<footer class="foot"><p>© 2026 Andrii Tsap, Sosnowiec</p></footer>
+<script src="script.js"></script>
+</body>
+</html>

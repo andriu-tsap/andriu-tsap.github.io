@@ -1,0 +1,91 @@
+:root{
+  --navy:#0F2A33; --navy-2:#16363F; --teal:#2DD4A0; --teal-d:#12A37A; --mist:#EAF3F1; --ink:#0E1E23; --muted:#5A6E73; --line:#D7E4E1; --white:#fff;
+  --display:"Unbounded",system-ui,sans-serif; --body:"Onest",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{font-family:var(--body);color:var(--ink);background:var(--white);line-height:1.6;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+
+.top{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:2rem;padding:1rem clamp(1rem,5vw,4rem);background:var(--navy);color:var(--white)}
+.me{font-family:var(--display);font-weight:700;text-decoration:none;font-size:1.05rem}
+.top nav{display:flex;gap:1.5rem;margin-left:auto}
+.top nav a{text-decoration:none;color:#A9C3C1}
+.top nav a:hover{color:var(--white)}
+.lang{display:flex;border:1px solid #2C4E57;border-radius:8px;overflow:hidden}
+.lang button{font:600 .85rem var(--body);background:none;border:0;color:#A9C3C1;padding:.35rem .6rem;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--teal);color:var(--navy)}
+
+.hero{background:var(--navy);color:var(--white);padding:clamp(3rem,8vw,7rem) clamp(1rem,5vw,4rem) clamp(3rem,7vw,6rem)}
+.avail{display:inline-flex;align-items:center;gap:.6rem;font-size:.95rem;color:#A9C3C1;margin-bottom:1.6rem}
+.avail span:first-child{width:10px;height:10px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 0 rgba(45,212,160,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 12px rgba(45,212,160,0)}100%{box-shadow:0 0 0 0 rgba(45,212,160,0)}}
+.hero h1{font-family:var(--display);font-weight:700;font-size:clamp(2rem,4.6vw,3.9rem);line-height:1.1;letter-spacing:-.02em;max-width:22ch}
+.intro{margin-top:1.6rem;font-size:1.15rem;color:#C5D8D6;max-width:58ch}
+.cta{display:flex;gap:1rem;margin-top:2.2rem;flex-wrap:wrap}
+.btn{display:inline-block;font:600 1rem var(--body);background:var(--teal);color:var(--navy);padding:.9rem 1.5rem;border-radius:12px;text-decoration:none;border:2px solid var(--teal)}
+.btn:hover{background:#5EE3BA;border-color:#5EE3BA}
+.btn.ghost{background:transparent;color:var(--white);border-color:#3D626B}
+.btn.ghost:hover{border-color:var(--teal)}
+
+section.work,section.services,section.how,section.about,section.contact{padding:clamp(3.5rem,7vw,6rem) clamp(1rem,5vw,4rem)}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(1.8rem,3.4vw,2.7rem);letter-spacing:-.02em;line-height:1.1}
+.lead{color:var(--muted);margin-top:.8rem;max-width:60ch}
+
+.filters{display:flex;gap:.5rem;flex-wrap:wrap;margin:2rem 0 1.5rem}
+.filters button{font:600 .95rem var(--body);padding:.5rem 1rem;border-radius:999px;border:2px solid var(--line);background:var(--white);cursor:pointer;color:var(--ink)}
+.filters button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:var(--white)}
+.projects{list-style:none;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem 2rem}
+.project{display:grid;gap:.7rem;align-content:start}
+.shot{display:block;border-radius:14px;overflow:hidden;background:var(--mist);aspect-ratio:16/10;border:1px solid var(--line)}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .5s ease}
+.shot:hover img{transform:scale(1.03)}
+.shot .ph{width:100%;height:100%;display:grid;place-items:center;font-family:var(--display);color:var(--muted);font-size:1.1rem;padding:1rem;text-align:center}
+.project h3{font-family:var(--display);font-weight:500;font-size:1.25rem;line-height:1.25}
+.project p{color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;padding:0}
+.tags li{font-size:.82rem;background:var(--mist);color:#2C5A55;padding:.15rem .6rem;border-radius:6px}
+.plinks{display:flex;gap:1.2rem;font-weight:600}
+.plinks a{text-decoration-thickness:2px;text-underline-offset:4px;text-decoration-color:var(--teal)}
+
+.services{background:var(--mist)}
+.price{width:100%;max-width:900px;border-collapse:collapse;margin-top:2rem}
+.price td{padding:1.1rem 0;border-bottom:1px solid var(--line);vertical-align:top}
+.price td:first-child{font-weight:600;width:38%;padding-right:1rem}
+.price td:nth-child(2){color:var(--muted);padding-right:1rem}
+.price td:last-child{text-align:right;font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--teal-d)}
+
+.how ol{list-style:none;padding:0;margin-top:2.2rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;counter-reset:s}
+.how li{counter-increment:s;border-top:3px solid var(--navy);padding-top:1rem}
+.how li::before{content:counter(s);font-family:var(--display);font-weight:700;color:var(--teal-d);font-size:1.4rem;display:block;margin-bottom:.4rem}
+.how h3{font-size:1.1rem}
+.how p{color:var(--muted);margin-top:.3rem;font-size:.97rem}
+
+.about{display:grid;grid-template-columns:1.2fr .8fr;gap:3rem;background:var(--navy);color:var(--white)}
+.about p{color:#C5D8D6;margin-top:1rem;max-width:60ch}
+.skills{display:grid;gap:1rem;align-content:start}
+.skills div{border-bottom:1px solid #2C4E57;padding-bottom:.8rem}
+.skills dt{color:var(--teal);font-weight:600;font-size:.9rem}
+.skills dd{font-size:1.05rem}
+
+.contact{text-align:left}
+.contact p{color:var(--muted);margin-top:.8rem;max-width:56ch}
+.mail{display:inline-block;margin-top:1.6rem;font-family:var(--display);font-weight:700;font-size:clamp(1.3rem,3.6vw,2.6rem);text-decoration-color:var(--teal);text-decoration-thickness:4px;text-underline-offset:8px;word-break:break-all}
+.links{list-style:none;padding:0;display:flex;gap:1.5rem;margin-top:1.6rem;font-weight:600}
+.foot{padding:1.5rem clamp(1rem,5vw,4rem);border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+
+@media (max-width:900px){
+  .projects{grid-template-columns:1fr}
+  .how ol{grid-template-columns:1fr 1fr}
+  .about{grid-template-columns:1fr}
+  .top nav{display:none}.lang{margin-left:auto}
+}
+@media (max-width:560px){
+  .how ol{grid-template-columns:1fr}
+  .price td{display:block;width:auto!important;text-align:left!important;padding:.2rem 0}
+  .price tr{display:block;padding:.9rem 0;border-bottom:1px solid var(--line)}
+  .price td{border:0}
+}
