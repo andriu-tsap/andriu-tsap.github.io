@@ -2,6 +2,14 @@ const GH = "https://github.com/andriu-tsap/";
 const PAGES = "https://andriu-tsap.github.io/";
 
 const PROJECTS = [
+  {"repo":"meta-ads-kit","type":"grafika","preview":"exports/01-1080x1080.png","demo":true,"tags":["Meta Ads","SVG"],"pl":["Nawila: kreacje Meta Ads","10 kreacji w czterech formatach i sześć grafik katalogowych."],"en":["Nawila: Meta Ads creatives","Ten ads in four formats and six catalog graphics."]},
+  {"repo":"brand-identity-logo","type":"branding","preview":"exports/logo-kolor.png","demo":true,"tags":["Logo","Brand book"],"pl":["Łuk i Ziarno: identyfikacja kawiarni","Trzy wersje logo, favicon i dziewięciostronicowa księga znaku."],"en":["Łuk i Ziarno: café identity","Three logo variants, a favicon and a nine-page brand guide."]},
+  {"repo":"youtube-channel-kit","type":"grafika","preview":"source/baner.svg","demo":true,"tags":["YouTube","SVG"],"pl":["Po napisach: oprawa YouTube","Baner, awatar, cztery miniatury i ekran końcowy."],"en":["Po napisach: YouTube channel kit","Banner, avatar, four thumbnails and an end screen."]},
+  {"repo":"print-design-pack","type":"druk","preview":"exports/ulotka-a5.png","demo":true,"tags":["CMYK","PDF"],"pl":["Kąt Nośny i Pora Talerza: materiały do druku","Wizytówka, roll-up, ulotka i składane menu. Pliki CMYK z 3 mm spadu."],"en":["Kąt Nośny and Pora Talerza: print materials","Business card, roll-up, leaflet and folded menu. CMYK PDFs with 3 mm bleed."]},
+  {"repo":"product-labels","type":"druk","preview":"source/jablko-makieta.svg","demo":true,"tags":["Etykiety","SVG"],"pl":["Tłocznia Półton: etykiety soków","Cztery smaki, edytowalne etykiety, siatki i makiety butelek."],"en":["Tłocznia Półton: juice labels","Four flavors, editable artwork, dieline guides and bottle mockups."]},
+  {"repo":"wordpress-theme-firma","type":"wp","preview":"exports/serwis-nurt.jpg","demo":true,"tags":["WordPress","FSE"],"pl":["Serwis Nurt: motyw WordPress","Motyw blokowy FSE, wzorce bloków i statyczne demo czterech stron."],"en":["Serwis Nurt: WordPress block theme","A block theme, reusable patterns and a four-page static demo."]},
+  {"repo":"price-monitor-bot","type":"auto","preview":"exports/dry-run.gif","demo":true,"tags":["Python","Playwright"],"pl":["Price Watch: monitor cen","Filtrowanie cen, historia SQLite oraz alerty e-mail i Telegram."],"en":["Price Watch: price monitor","Price filtering, SQLite history, email and Telegram alerts."]},
+  {"repo":"excel-budzet-firmy","type":"auto","preview":"exports/Panel.png","demo":true,"tags":["Excel","Google Sheets"],"pl":["Budżet firmy: szablon Excel","Plan i wykonanie, przepływy pieniężne oraz panel wykresów."],"en":["Company budget: Excel template","Plan versus actuals, cash flow and a chart dashboard."]},
   { repo: "salon-booking", type: "www", demo: true, tags: ["HTML", "CSS", "JavaScript"],
     pl: ["Studio Linia: strona salonu z rezerwacją online", "Rezerwacja w 3 krokach: zabieg, specjalistka, dzień i godzina. Wolne terminy zależą od długości zabiegu."],
     en: ["Studio Linia: salon website with online booking", "3-step booking: service, specialist, day and time. Free slots depend on the service length."] },
@@ -30,7 +38,7 @@ const PROJECTS = [
     pl: ["Generator komponentów UI (praca inżynierska)", "Z opisu tekstowego tworzy komponenty HTML/CSS. Biblioteka ponad 500 szablonów, działa offline."],
     en: ["AI-assisted UI component generator (BEng thesis)", "Generates HTML/CSS components from a text prompt. 500+ templates, fully offline."], noShot: true }
 ];
-const TYPES = { all: ["Wszystkie", "All"], www: ["Strony", "Websites"], shop: ["Sklepy", "Shops"], app: ["Aplikacje", "Web apps"], email: ["E-maile", "Emails"], auto: ["Automatyzacje", "Automation"] };
+const TYPES = { all: ["Wszystkie", "All"], www: ["Strony", "Websites"], shop: ["Sklepy", "Shops"], app: ["Aplikacje", "Web apps"], email: ["E-maile", "Emails"], grafika: ["Grafika", "Graphics"], druk: ["Druk", "Print"], branding: ["Branding", "Branding"], wp: ["WordPress", "WordPress"], auto: ["Automatyzacje", "Automation"] };
 
 const SERVICES = [
   { pl: ["Landing page", "Jedna strona sprzedażowa lub wizytówka firmy, z formularzem kontaktowym."], en: ["Landing page", "One-page site for a product or a business, with a contact form."], p: "od 500 zł" },
@@ -76,7 +84,7 @@ function renderProjects() {
   $("#projects").innerHTML = PROJECTS.filter(p => filter === "all" || p.type === filter).map(p => {
     const [title, desc] = p[lang];
     const demo = PAGES + p.repo + "/";
-    const shot = p.noShot ? `<span class="ph">${title}</span>` : `<img src="img/${p.repo}.jpg" alt="" loading="lazy">`;
+    const shot = p.noShot ? `<span class="ph">${title}</span>` : `<img src="${p.preview ? demo + p.preview : `img/${p.repo}.jpg`}" alt="" loading="lazy">`;
     return `<li class="project">
       <a class="shot" href="${p.demo ? demo : GH + p.repo}" tabindex="-1" aria-hidden="true">${shot}</a>
       <h3>${title}</h3><p>${desc}</p>
